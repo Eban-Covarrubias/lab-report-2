@@ -47,6 +47,7 @@ Here is a test that doesn't cause this buggy code to fail:
 And finally here is the symptom/output of running the tests:
 
 ![Image](JunitTestsOutput.png)
+
 Note that the calculated value when the array is [1, 1, 5] 2.5 instead of 3, this is because the bug in the code causes the average to be
 calculated without any of the lowest values. Meaning all of the 1's are removed, we are left with the value of 5/2 instead of (5+1)/2.
 
