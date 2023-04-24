@@ -31,12 +31,17 @@ the first added message after we add the second message. This entire process can
 Part 2:
 One of the buggy methods that I fixed was called averageWithoutLowest, here is the failure inducing test:
 ![Image](FailingTest.png)
-Here is the actual code being tested:
+
+Here is the actual buggy code being tested:
 ![Image](BuggyCode.png)
+
 Here is a test that doesn't cause this buggy code to fail:
 ![Image](PassingTest.png)
+
 And finally here is the symptom/output of running the tests:
 ![Image](JunitTestsOutput.png)
+Note that the calculated value when the array is [1, 1, 5] 2.5 instead of 3, this is because the bug in the code causes the average to be
+calculated without any of the lowest values. Meaning all of the 1's are removed, we are left with the value of 5/2 instead of (5+1)/2.
 
 The bug in this code was that instead of simply removing the lowest value in the array, the code was actually removing every duplicate low value as well.
 That is why when there was repeating 1's in a test the average was inaccurate, the code removed all the 1's instead of just a single 1.
