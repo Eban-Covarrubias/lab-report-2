@@ -32,11 +32,14 @@ Part 2:
 One of the buggy methods that I fixed was called averageWithoutLowest, here is the failure inducing test:
 ![Image](FailingTest.png)
 
+
 Here is the actual buggy code being tested:
 ![Image](BuggyCode.png)
 
+
 Here is a test that doesn't cause this buggy code to fail:
 ![Image](PassingTest.png)
+
 
 And finally here is the symptom/output of running the tests:
 ![Image](JunitTestsOutput.png)
@@ -49,3 +52,6 @@ The fix was quite simple, all that needed to be done was store the value of a lo
 the lowest value was also done in the same for loop that was adding up the sum. From there, the average could be accurately calculated and returned:
 ![Image](WorkingCode.png)
 
+
+Part 3:
+Something that I have learned is how to create a webserver and how URL's are incredibly important for passing information to webservers. I didn't realize how important the specific path of a URL was until I created a webserver that was modified entirely by entering queries into the path. I also learned a lot about testing with Junit, I previously have done all of my debugging using embeded print statements in my methods. Junit tests provide a much more clean and organized way to do testing on my methods.
