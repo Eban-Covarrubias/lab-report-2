@@ -14,6 +14,8 @@ the web server will add the message onto a new line of the growing string. Note 
 looks like this: /add-message?s=How are you
 
 ![Image](How_are_you.png)
+In this specific screenshot the methods called are: url.getPath().contains("/add-message") is called in order to verify that the path contains this specific string.
+This is true, and the next method that is called is url.getQuery(). This returns the part of the path after the "?" symbol. The query in this case is s=How are you. The next method that is called is the split method, with an argument of "=". Calling split("=") and assinging the output to an array called parameters allows us to seperate the "s" and the "How are you" strings. From there we can use the .equals method on parameters[0] to verify that it is the string "s", and then we can concatenate the contents of parameters[1], which is "How are you", on the variable str, along with a new line character. This completes the functionality of the handleRequest method. This is called whenerever the webesite is loaded in.
 
 Here is another example where I have added in multiple messages to the string, as you can see
 the new message will be added to the previous message(s) in the next line.
