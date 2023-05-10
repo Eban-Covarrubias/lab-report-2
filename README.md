@@ -1,4 +1,4 @@
-# lab-report-2
+## lab-report-2
 
 Part 1:
 This is the code I made for StringServer, 
